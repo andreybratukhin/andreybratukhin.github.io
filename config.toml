@@ -1,0 +1,25 @@
+baseURL = "https://andreybratukhin.github.io/"
+languageCode = "en-us"
+title = "Personal Blog"
+theme = "hugo-xmin"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:year/:month/:day/:slug/"
+    note = "/note/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "RSS"
+    url = "/index.xml"
+
+[params]
+    description = ""
+    footer = "&copy; 2017. All rights reserved."
