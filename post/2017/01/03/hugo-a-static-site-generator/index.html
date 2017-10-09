@@ -46,6 +46,8 @@ to serve html and images.</p>
 <li>minimum security risk;</li>
 </ul>
 
+<p><img src="/img/hugo-logo.png" alt="Hugo" /></p>
+
 <p>This personal blog is powered by <a href="https://gohugo.io/">Hugo</a>. Hugo is popular open-source
 static site generator written in <a href="https://golang.org">Go</a>. It provides flexibility and speed
 to build wide variation of static websites: blogs, project documentation websites, wiki,
@@ -79,20 +81,33 @@ Use <a href="https://github.com/gohugoio/hugo/releases">GitHub Release page</a> 
 <p>Clone the new repository:</p>
 
 <pre><code class="language-shell">git clone https://github.com/username/username.github.io
+cd username.github.io
+git checkout -b gh-pages
+echo 'public' &gt;&gt; .gitignore
 </code></pre>
+
+<p>gh-pages branch is used to store source of pages. master branch will be used to host published content.</p>
+
+<p>Prepare master branch to host published site:</p>
+
+<pre><code class="language-shell">git checkout --orphan master
+git reset --hard
+git commit --allow-empty -m &quot;Initializing master branch&quot;
+git push origin master
+git checkout gh-pages
+git worktree add -B master public origin/master
+</code></pre>
+
+<p>Hugo generates published content in <em>public</em> folder. Above commands map <em>public</em> folder to master
+branch. Everything in <em>public</em> folder goes directly to master branch.</p>
 
 <h2 id="create-a-new-site">Create a new site</h2>
 
 <p>The below command creates empty Hugo site in a folder <code>username.github.io</code>.</p>
 
-<pre><code class="language-shell">hugo new site username.github.io
+<pre><code class="language-shell">cd ..
+hugo new site username.github.io
 cd username.github.io
-</code></pre>
-
-<p>I use the simplest one approach to host site on GitHub Pages which uses <code>docs</code> folder in master
-branch to publish the content.</p>
-
-<pre><code class="language-shell">echo 'publishDir = &quot;docs&quot;' &gt;&gt; config.toml
 </code></pre>
 
 <h2 id="add-a-theme">Add a theme</h2>
@@ -119,6 +134,33 @@ server with drafts enabled to see your live changes:</p>
 <p>Navigate to your new site at <a href="http://localhost:1313/">http://localhost:1313/</a>.</p>
 
 <h2 id="publish">Publish</h2>
+
+<p>Save source of posts in gh-pages branch:</p>
+
+<pre><code class="language-shell">git add --all &amp;&amp; git commit -m &quot;Save sources&quot;
+</code></pre>
+
+<p>Publish generated content to website:</p>
+
+<pre><code class="language-shell">hugo
+cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publish content&quot; &amp;&amp; cd ..
+</code></pre>
+
+<p>You can wrap publish commands in handy shell script.</p>
+
+<h2 id="workflow">Workflow</h2>
+
+<p>The publishing workflow looks like this:</p>
+
+<ul>
+<li>Start Hugo server with drafts in separated terminal: <code>hugo server -D</code></li>
+<li>Open in webbrowser: <code>http://localhost:1313</code></li>
+<li>Create new post: <code>hugo new post/my-next-awesome-post.md</code></li>
+<li>Edit file: <code>content/post/my-next-awesome-post.md</code></li>
+<li>When the post is ready remove <code>draft = true</code> in meta</li>
+<li>Generate published content: <code>hugo</code></li>
+<li>Publish content by commiting <code>public</code> folder to master branch</li>
+</ul>
 
 </main>
 
