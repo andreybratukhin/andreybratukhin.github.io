@@ -21,6 +21,8 @@ I like the minimalist principles behind of hosting of a static website:
 - version control of content with Git;
 - minimum security risk;
 
+![Hugo](/img/hugo-logo.png)
+
 This personal blog is powered by [Hugo](https://gohugo.io/). Hugo is popular open-source 
 static site generator written in [Go](https://golang.org). It provides flexibility and speed
 to build wide variation of static websites: blogs, project documentation websites, wiki, 
@@ -54,20 +56,32 @@ Create a new public repository named **username.github.io**, where username is y
 Clone the new repository:
 ~~~shell
 git clone https://github.com/username/username.github.io
+cd username.github.io
+git checkout -b gh-pages
+echo 'public' >> .gitignore
 ~~~
+gh-pages branch is used to store source of pages. master branch will be used to host published content.
+
+Prepare master branch to host published site:
+~~~shell
+git checkout --orphan master
+git reset --hard
+git commit --allow-empty -m "Initializing master branch"
+git push origin master
+git checkout gh-pages
+git worktree add -B master public origin/master
+~~~
+
+Hugo generates published content in *public* folder. Above commands map *public* folder to master
+branch. Everything in *public* folder goes directly to master branch.
 
 ## Create a new site
 
 The below command creates empty Hugo site in a folder `username.github.io`.
 ~~~shell
+cd ..
 hugo new site username.github.io
 cd username.github.io
-~~~
-
-I use the simplest one approach to host site on GitHub Pages which uses `docs` folder in master
-branch to publish the content.
-~~~shell
-echo 'publishDir = "docs"' >> config.toml
 ~~~
 
 ## Add a theme
@@ -98,3 +112,28 @@ Navigate to your new site at http://localhost:1313/.
 
 
 ## Publish
+
+Save source of posts in gh-pages branch:
+~~~shell
+git add --all && git commit -m "Save sources"
+~~~
+
+Publish generated content to website:
+~~~shell
+hugo
+cd public && git add --all && git commit -m "Publish content" && cd ..
+~~~
+
+You can wrap publish commands in handy shell script.
+
+## Workflow
+
+The publishing workflow looks like this:
+
+- Start Hugo server with drafts in separated terminal: `hugo server -D`
+- Open in webbrowser: `http://localhost:1313`
+- Create new post: `hugo new post/my-next-awesome-post.md`
+- Edit file: `content/post/my-next-awesome-post.md`
+- When the post is ready remove `draft = true` in meta
+- Generate published content: `hugo`
+- Publish content by commiting `public` folder to master branch
