@@ -115,13 +115,14 @@ Navigate to your new site at http://localhost:1313/.
 
 Save source of posts in gh-pages branch:
 ~~~shell
-git add --all && git commit -m "Save sources"
+git add --all && git commit -m "Save sources" && git push
 ~~~
 
 Publish generated content to website:
 ~~~shell
 hugo
-cd public && git add --all && git commit -m "Publish content" && cd ..
+cd public && git add --all && git commit -m "Publish content" && git push && cd ..
+
 ~~~
 
 You can wrap publish commands in handy shell script.
