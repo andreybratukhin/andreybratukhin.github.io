@@ -137,13 +137,14 @@ server with drafts enabled to see your live changes:</p>
 
 <p>Save source of posts in gh-pages branch:</p>
 
-<pre><code class="language-shell">git add --all &amp;&amp; git commit -m &quot;Save sources&quot;
+<pre><code class="language-shell">git add --all &amp;&amp; git commit -m &quot;Save sources&quot; &amp;&amp; git push
 </code></pre>
 
 <p>Publish generated content to website:</p>
 
 <pre><code class="language-shell">hugo
-cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publish content&quot; &amp;&amp; cd ..
+cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publish content&quot; &amp;&amp; git push &amp;&amp; cd ..
+
 </code></pre>
 
 <p>You can wrap publish commands in handy shell script.</p>
