@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Personal Blog</title>
-    <link>https://andreybratukhin.github.io/</link>
-    <description>Recent content in Home on Personal Blog</description>
+    <title>Book on Personal Blog</title>
+    <link>https://andreybratukhin.github.io/tags/book/</link>
+    <description>Recent content in Book on Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://andreybratukhin.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andreybratukhin.github.io/tags/book/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,17 +21,6 @@
 Two goals of reading:
  Reading for information; Reading for understanding;  The levels of reading:
  Elementary reading; Inspectional reading: Analytical reading; Syntopical reading;  Inspectional Reading I: Systematic Skimming or Pre-reading  Look at the title page and, if the book has one, at the preface.</description>
-    </item>
-    
-    <item>
-      <title>Hugo: a static site generator</title>
-      <link>https://andreybratukhin.github.io/post/2017/01/03/hugo-a-static-site-generator/</link>
-      <pubDate>Tue, 03 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://andreybratukhin.github.io/post/2017/01/03/hugo-a-static-site-generator/</guid>
-      <description>A static site definitely has own advantages. There are almost no maintenance costs. And more importantly in long term it preserves accessibility of the information.
-Yet another plausible aspect of hosting of a static site, it&amp;rsquo;s more environment friendly. It doesn&amp;rsquo;t require to run full featured dynamic web site (I look to you - Wordpress) just to serve html and images.
-I like the minimalist principles behind of hosting of a static website:</description>
     </item>
     
   </channel>
