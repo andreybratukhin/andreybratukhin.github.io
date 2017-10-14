@@ -82,15 +82,11 @@ landing pages etc.</p>
 See <a href="https://gohugo.io/getting-started/installing/">Installation guide</a> for more details.</p>
 
 <p>For MacOS:</p>
-
-<pre><code class="language-shell">brew install hugo
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="">brew install hugo</span></code></pre>
+</div>
 <p>For Ubuntu:</p>
-
-<pre><code class="language-shell">sudo apt install hugo
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">sudo apt install hugo</span></code></pre>
+</div>
 <p>Be aware, the official Ubuntu repository can host older version of Hugo.
 Use <a href="https://github.com/gohugoio/hugo/releases">GitHub Release page</a> responsibly.</p>
 
@@ -100,74 +96,57 @@ Use <a href="https://github.com/gohugoio/hugo/releases">GitHub Release page</a> 
 (or organization name) on GitHub.</p>
 
 <p>Clone the new repository:</p>
-
-<pre><code class="language-shell">git clone https://github.com/username/username.github.io
-cd username.github.io
-git checkout -b gh-pages
-echo 'public' &gt;&gt; .gitignore
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">git clone https://github.com/username/username.github.io
+</span><span style=""></span><span style="">cd</span><span style=""> username.github.io
+</span><span style="">git checkout -b gh-pages
+</span><span style=""></span><span style="">echo</span><span style=""> </span><span style="color:#e6db74">&#39;public&#39;</span><span style=""> &gt;&gt; .gitignore</span></code></pre>
+</div>
 <p>gh-pages branch is used to store source of pages. master branch will be used to host published content.</p>
 
 <p>Prepare master branch to host published site:</p>
-
-<pre><code class="language-shell">git checkout --orphan master
-git reset --hard
-git commit --allow-empty -m &quot;Initializing master branch&quot;
-git push origin master
-git checkout gh-pages
-git worktree add -B master public origin/master
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">git checkout --orphan master
+</span><span style="">git reset --hard
+</span><span style="">git commit --allow-empty -m </span><span style="color:#e6db74">&#34;Initializing master branch&#34;</span><span style="">
+</span><span style="">git push origin master
+</span><span style="">git checkout gh-pages
+</span><span style="">git worktree add -B master public origin/master</span></code></pre>
+</div>
 <p>Hugo generates published content in <em>public</em> folder. Above commands map <em>public</em> folder to master
 branch. Everything in <em>public</em> folder goes directly to master branch.</p>
 
 <h2 id="create-a-new-site">Create a new site</h2>
 
 <p>The below command creates empty Hugo site in a folder <code>username.github.io</code>.</p>
-
-<pre><code class="language-shell">cd ..
-hugo new site username.github.io
-cd username.github.io
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">cd</span><span style=""> ..
+</span><span style="">hugo new site username.github.io
+</span><span style=""></span><span style="">cd</span><span style=""> username.github.io</span></code></pre>
+</div>
 <h2 id="add-a-theme">Add a theme</h2>
 
 <p>Hugo has a bunch of good responsive themes. Take a look into <a href="https://themes.gohugo.io/">themes.gohugo.io</a>
 and select a theme what you like. I decided to start with very minimalistic theme -
 <a href="https://themes.gohugo.io/hugo-xmin/">XMin</a>.</p>
-
-<pre><code class="language-shell">git submodule add git@github.com:yihui/hugo-xmin.git themes/hugo-xmin
-echo 'theme = &quot;hugo-xmin&quot;' &gt;&gt; config.toml
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">git submodule add git@github.com:yihui/hugo-xmin.git themes/hugo-xmin
+</span><span style=""></span><span style="">echo</span><span style=""> </span><span style="color:#e6db74">&#39;theme = &#34;hugo-xmin&#34;&#39;</span><span style=""> &gt;&gt; config.toml</span></code></pre>
+</div>
 <h2 id="add-a-content">Add a content</h2>
-
-<pre><code class="language-shell">hugo new post/my-first-post.md
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">hugo new post/my-first-post.md</span></code></pre>
+</div>
 <p>Edit the content of newly create file <code>content/post/my-first-post.md</code>. Also start the Hugo
 server with drafts enabled to see your live changes:</p>
-
-<pre><code class="language-shell">hugo server -D
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">hugo server -D</span></code></pre>
+</div>
 <p>Navigate to your new site at <a href="http://localhost:1313/">http://localhost:1313/</a>.</p>
 
 <h2 id="publish">Publish</h2>
 
 <p>Save source of posts in gh-pages branch:</p>
-
-<pre><code class="language-shell">git add --all &amp;&amp; git commit -m &quot;Save sources&quot; &amp;&amp; git push
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">git add --all </span><span style="color:#f92672">&amp;&amp;</span><span style=""> git commit -m </span><span style="color:#e6db74">&#34;Save sources&#34;</span><span style=""> </span><span style="color:#f92672">&amp;&amp;</span><span style=""> git push</span></code></pre>
+</div>
 <p>Publish generated content to website:</p>
-
-<pre><code class="language-shell">hugo
-cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publish content&quot; &amp;&amp; git push &amp;&amp; cd ..
-
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="">hugo
+</span><span style=""></span><span style="">cd</span><span style=""> public </span><span style="color:#f92672">&amp;&amp;</span><span style=""> git add --all </span><span style="color:#f92672">&amp;&amp;</span><span style=""> git commit -m </span><span style="color:#e6db74">&#34;Publish content&#34;</span><span style=""> </span><span style="color:#f92672">&amp;&amp;</span><span style=""> git push </span><span style="color:#f92672">&amp;&amp;</span><span style=""> </span><span style="">cd</span><span style=""> ..</span></code></pre>
+</div>
 <p>You can wrap publish commands in handy shell script.</p>
 
 <h2 id="workflow">Workflow</h2>
