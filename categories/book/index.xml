@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book on Personal Blog</title>
+    <link>https://andreybratukhin.github.io/categories/book/</link>
+    <description>Recent content in Book on Personal Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://andreybratukhin.github.io/categories/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How To Read a Book</title>
+      <link>https://andreybratukhin.github.io/post/2017/02/14/how-to-read-a-book/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://andreybratukhin.github.io/post/2017/02/14/how-to-read-a-book/</guid>
+      <description>&amp;lsquo;How to Read a Book&amp;rsquo; by Mortimer J. Adler and Charles Van Doren, originally published in 1940, has become a rare phenomenon, a living classic. It is the best and most successful guide to reading comprehension for the general reader.
+Two goals of reading:
+ Reading for information; Reading for understanding;  The levels of reading:
+ Elementary reading; Inspectional reading: Analytical reading; Syntopical reading;  Inspectional Reading I: Systematic Skimming or Pre-reading  Look at the title page and, if the book has one, at the preface.</description>
+    </item>
+    
+  </channel>
+</rss>
