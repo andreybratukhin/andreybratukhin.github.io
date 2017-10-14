@@ -192,3 +192,8 @@ h4, .h4 {
 .ads {
     margin-bottom: 1rem;
 }
+
+.highlight pre {
+    padding: 0.25rem 0.5rem;
+}
+

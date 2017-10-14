@@ -36,7 +36,7 @@ The installation of Hugo is very simple.
 See [Installation guide](https://gohugo.io/getting-started/installing/) for more details.
 
 For MacOS:
-~~~shell
+~~~bash
 brew install hugo
 ~~~
 For Ubuntu:
