@@ -1,0 +1,38 @@
+<div class="col-sm-3 offset-sm-1 blog-sidebar">
+    <div class="sidebar-module sidebar-module-inset">
+        <h4>About</h4>
+        <p> Hello! I’m Andrey, a software engineer in sunny California.
+            My interests are in computer science and mathematics, and I strive to write clean, simple code for practical applications.
+            On this web site you will find my programming projects, mathematical ideas, various writings, and random work.
+        </p>
+    </div>
+
+    {{if not .IsHome }}
+    <div class="sidebar-module">
+        <h4>Recent posts</h4>
+        <ol class="list-unstyled">
+            {{ range first 10 .Site.RegularPages }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+            {{ end }}
+        </ol>
+    </div>
+    {{ end }}
+
+    <div class="sidebar-module">
+        <h4>Categories</h4>
+        <ol class="list-unstyled">
+            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+            <li><a href="/categories/{{ $name | urlize }}/">{{ $name }}</a></li>
+            {{ end }}
+        </ol>
+    </div>
+
+    <div class="sidebar-module">
+        <h4>Links</h4>
+        <ol class="list-unstyled">
+            {{ range .Site.Menus.sidebar }}
+            <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ol>
+    </div>
+</div><!-- /.blog-sidebar -->

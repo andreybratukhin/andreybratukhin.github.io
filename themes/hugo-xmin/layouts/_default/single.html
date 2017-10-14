@@ -1,12 +1,25 @@
 {{ partial "header.html" . }}
-<div class="article-meta">
-<h1><span class="title">{{ .Title }}</span></h1>
-{{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
-{{ if .Params.date }}<h2 class="date">{{ .Date.Format "2006/01/02" }}</h2>{{ end }}
+
+<div class="blog-post">
+<h1 class="blog-post-title">{{ .Title }}</h1>
+<p class="blog-post-meta">{{ if .Params.date }}{{ .Date.Format "January 02 2006" }}{{ end }}</p>
+
+<div class="ads">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive-banner -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6474680909689206"
+     data-ad-slot="8663433909"
+     data-ad-format="auto"></ins>
+<script>
+ (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
 <main>
 {{ .Content }}
 </main>
+</div>
 
 {{ partial "footer.html" . }}

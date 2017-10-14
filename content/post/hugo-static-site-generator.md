@@ -2,7 +2,7 @@
 title: 'Hugo: a static site generator'
 date: '2017-01-03'
 tags: ['web']
-category: 'Web'
+categories: ['Web']
 ---
 
 A static site definitely has own advantages. There are almost no maintenance costs.

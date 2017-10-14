@@ -1,6 +1,7 @@
 baseURL = "https://andreybratukhin.github.io/"
 languageCode = "en-us"
 title = "Personal Blog"
+description = "Personal blog about software engineering"
 theme = "hugo-xmin"
 googleAnalytics = "UA-28993181-7"
 disqusShortname = ""
@@ -13,12 +14,23 @@ footnotereturnlinkcontents = "↩"
     note = "/note/:year/:month/:day/:slug/"
 
 [[menu.main]]
-    name = "Home"
+    name = "Personal Blog"
     url = "/"
     weight = 1
 [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+[[menu.main]]
     name = "RSS"
     url = "/index.xml"
+
+[[menu.sidebar]]
+    name = "Logic Games: Puzzly Game"
+    url = "http://puzzlygame.com/"
+
+[[menu.sidebar]]
+    name = "News and Hot Topics"
+    url = "http://hottopicsnews.com/"
 
 [params]
     description = ""

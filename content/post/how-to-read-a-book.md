@@ -2,7 +2,7 @@
 title: 'How To Read a Book'
 date: '2017-02-14'
 tags: ['book']
-category: 'Book'
+categories: ['Book']
 ---
 
 **'How to Read a Book'** by Mortimer J. Adler and Charles Van Doren, originally published in 1940, has become
