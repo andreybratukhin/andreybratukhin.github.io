@@ -29,10 +29,6 @@ pygmentsCodeFences = true
     name = "Logic Games: Puzzly Game"
     url = "http://puzzlygame.com/"
 
-[[menu.sidebar]]
-    name = "News and Hot Topics"
-    url = "http://hottopicsnews.com/"
-
 [params]
     description = ""
-    footer = "&copy; 2017. All rights reserved."
+    footer = "&copy; 2018. All rights reserved."
